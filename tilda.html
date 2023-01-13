@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en" data-color-mode="auto" data-light-theme="light" data-dark-theme="dark" data-a11y-animated-images="system">
+<head>
+
+<script src="http://yastatic.net/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
+    </head>
+<body>
+<script type="text/javascript">
+    window.onload = function () {
+
+        const cityes = {
+            "Подольск": '8-800-1111111',
+            "Москва": '8-800-2222222',
+            "Воронеж": '8-800-3333333',
+        };
+
+        var phone = cityes["Москва"];
+
+        var city = ymaps.geolocation.city;
+
+        if(cityes[city] !== undefined){
+            phone = cityes[city];
+        }
+
+        console.dir(ymaps.geolocation);
+        jQuery(".user-city").text(city);
+        jQuery(".user-region").text(ymaps.geolocation.region);
+        jQuery(".user-country").text(ymaps.geolocation.country);
+        jQuery(".user-phone").text(phone);
+    }
+</script>
+
+<div id="header">
+    <div class="user-city"></div>
+    <div class="user-region"></div>
+    <div class="user-country"></div>
+    <div class="user-phone"></div>
+</div>
+
+
+<div id="footer" style="bottom: 0; position: absolute;">
+    <div class="user-city"></div>
+    <div class="user-region"></div>
+    <div class="user-country"></div>
+    <div class="user-phone"></div>
+</div>
+
+
+</body>
+</html>
