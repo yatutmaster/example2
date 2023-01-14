@@ -54,7 +54,7 @@ function gen_uniq(int $from, int $to, int $setAttempts = 1000)
                 $to = $to << 1;
                 $attempts = 0;
             }
-        } while (isset($uniqIndexes[$int]) and $attempts <= $setAttempts);
+        } while (isset($uniqIndexes[$int]));
 
         $uniqIndexes[$int] = 1;
 
