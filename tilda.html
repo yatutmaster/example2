@@ -17,14 +17,12 @@
         };
 
         var phone = cityes["Москва"];
-
         var city = ymaps.geolocation.city;
 
         if(cityes[city] !== undefined){
             phone = cityes[city];
         }
-
-        console.dir(ymaps.geolocation);
+ 
         jQuery(".user-city").text(city);
         jQuery(".user-region").text(ymaps.geolocation.region);
         jQuery(".user-country").text(ymaps.geolocation.country);
