@@ -88,7 +88,7 @@ function random_array(int $rows, int $cols, int $randFrom, int $randTo)
         }
     }
 
-    echo 'COLL SUMM'.PHP_EOL.implode(' - ', $colSumm);
+    echo 'COL SUMM'.PHP_EOL.implode(' - ', $colSumm);
 }
 
 random_array(5, 7, 1, 1000);
